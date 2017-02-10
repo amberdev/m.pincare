@@ -1,3 +1,12 @@
+$(function() {
+    $(".menu-icon").click(function(){
+        $(".responsive-menu").show();
+    });
+    $(".close-btn").click(function(){
+        $(".responsive-menu").hide();
+    });
+});
+
 $( document ).ready(function() {
 var base_url="http://m.pincare.in/";
 	
