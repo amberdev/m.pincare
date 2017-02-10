@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/m.pincare.in/';
+$config['base_url']	= 'http://m.pincare.in/';
 
 /*
 |--------------------------------------------------------------------------
