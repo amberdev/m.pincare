@@ -38,7 +38,7 @@
 		{
 			$this->db->insert('tbl_users',$dataUser);
 			//echo $this->db->last_query();die;
-			$this->db->where('fb_id',$data->identifier);
+			$this->db->where('fb_id',$data_new->identifier);
 			$q=$this->db->get('tbl_users');
 			return $q->result_array();
 			
