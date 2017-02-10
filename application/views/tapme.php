@@ -6,9 +6,10 @@
 	<div id="status">&nbsp;</div>
 </div>
 
-<button type="button" name="" value="" class="menu-icon"></button>    
+<button type="button" name="" value="" class="menu-icon"></button>   
+
  
-<a href="#">    
+<a href="<?php base_url();?>tapme/outlets">    
 <div class="start-playing-sec">
     <img src="<?php echo base_url();?>front/images/Home1.gif" alt="">
     <div class="clear space30"></div>

@@ -19,4 +19,9 @@ class Tapme extends CI_Controller {
 		$this->load->view('tapme');
 	}
 
+	public function outlets()
+	{
+		$this->load->view('outlets');
+	}
+
 }
