@@ -27,7 +27,7 @@ class Welcome extends CI_Controller {
 		
 		if(isset($_SESSION['user']['fb_id']) && isset($_SESSION['user']['unique_id']) && isset($_SESSION['user']['username']) && isset($_SESSION['user']['email']))
 		{
-			redirect('welcome/home');
+			redirect('tapme');
 		}
 		else
 		{
@@ -48,7 +48,7 @@ class Welcome extends CI_Controller {
 					$_SESSION['user']['unique_id']=$result[0]['id'];
 					$_SESSION['user']['username']=$result[0]['displayName'];
 					$_SESSION['user']['email']=$result[0]['email'];
-					redirect('welcome/home');
+					redirect('tapme');
 				}
 
 			}

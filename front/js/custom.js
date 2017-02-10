@@ -14,6 +14,12 @@ var base_url="http://m.pincare.in/";
 
 	$("#login_btn").click(function(){
 
+		$(window).on('load', function() { // makes sure the whole site is loaded 
+			$('#status').fadeOut(); // will first fade out the loading animation 
+            $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website. 
+            $('body').delay(350).css({'overflow':'visible'});
+		});
+
 	 FB.login(function(response) {
 			if (response.authResponse) {
 				//alert("REDIRECT FB.LOGIN 1");
