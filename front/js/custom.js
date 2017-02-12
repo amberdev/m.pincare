@@ -74,7 +74,7 @@ var base_url="http://m.pincare.in/";
 	       }
 	    },
 	        function (response) {
-	            alert("Checked in!");
+	            alert(response);
 	        }
 	    );
 	}
