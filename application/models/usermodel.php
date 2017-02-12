@@ -77,5 +77,15 @@
 			$this->db->update('tbl_users',$data);
 		}
 	}
+
+	public function get_story()
+	{
+		$this->db->select('*');
+		$q=$this->db->get('tbl_story');
+		if($q->num_rows()>0)
+		{
+			return $q->result_array();
+		}
+	}
 }	
 

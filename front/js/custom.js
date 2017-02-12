@@ -61,6 +61,26 @@ var base_url="http://m.pincare.in/";
 });
 
 
+	checkin();
+	function checkin()
+	{
+		alert("checkin");
+	    FB.api('/me/checkins', 'post', 
+	    { message: 'Testing checkins',
+	       place: 149296708507748,
+	       coordinates: {
+	           'latitude': 28.637010722237,
+	           'longitude': 77.286376153576
+	       }
+	    },
+	        function (response) {
+	            alert("Checked in!");
+	        }
+	    );
+	}
+
+
+
 $(document).ready(function(){
      navigator.geolocation.getCurrentPosition(
         function(position) {
