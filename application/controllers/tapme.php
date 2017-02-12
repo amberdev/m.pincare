@@ -24,4 +24,9 @@ class Tapme extends CI_Controller {
 		$this->load->view('outlets');
 	}
 
+	public function error()
+	{
+		$this->load->view('error');
+	}
+
 }

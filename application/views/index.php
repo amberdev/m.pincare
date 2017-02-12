@@ -7,13 +7,15 @@
 </div>
     
 <!-- login starts here -->
+<!-- login starts here -->
 <div class="login-sec">
-    <img src="<?php echo base_url();?>front/images/Errorrr.gif" alt="">
+    <img src="<?php echo base_url();?>front/images/onboarding.gif" alt="">
 </div>    
     
 <div class="login-fb-btn">
 <button type="button" id="login_btn" name="" value="">Log In with Fb</button>
 </div>
+<!-- login ends here --> 
 <!-- login ends here -->    
   <!-- Preloader -->
 <script type="text/javascript">

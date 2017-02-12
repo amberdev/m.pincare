@@ -67,6 +67,7 @@ input[type=submit]{cursor:pointer;}
     background:#2a2f34;
     position:fixed;
     display:none;
+    z-index:10;
 }
 .close-btn{
     width:30px;
@@ -88,8 +89,8 @@ input[type=submit]{cursor:pointer;}
 }
 .responsive-menu ul li{width:100%; text-align:center;}
 .responsive-menu ul li a{
-    font-size:30px;
-    line-height:70px;
+    font-size:20px;
+    line-height:55px;
     color:#fff;
 }
 .responsive-menu ul li a.stories-link{color:#e01f4f;}
@@ -103,6 +104,7 @@ input[type=submit]{cursor:pointer;}
     position:absolute;
     top:50%;
     left:50%;
+    width:100%;
     -ms-transform:translate(-50%,-50%); 
     -moz-transform:translate(-50%,-50%); 
     -webkit-transform:translate(-50%,-50%); 
@@ -140,9 +142,9 @@ input[type=submit]{cursor:pointer;}
 }
 .start-playing-sec p{
     color:#2a2f34;
-    font-size:35px;  
+    font-size:20px;  
     font-family: 'sf_ui_textlight';
-    line-height:50px;
+    line-height:30px;
 }
 
 /* outlet listing sec starts here */
