@@ -1,4 +1,7 @@
-<?php $this->load->view('include/header');?>
+<?php $this->load->view('include/header');
+
+
+?>
 
 <body>
 <!-- Preloader -->
@@ -11,9 +14,10 @@
 <div class="outlet-listing-sec">
 
 
-<?php if(!empty($data_outlets)):
+<?php 
+if(!empty($data_outlets)):
         foreach($data_outlets as $outlets):?>
-    
+<a href="<?php echo base_url();?>story/index/<?php echo base64_encode($outlets['place_id']);?>/<?php echo base64_encode($outlets['id']);?>">
 <div class="outlet-listing-row">
         <div class="outlet-left-image"><img src="http://<?php echo $outlets['logo'];?>" alt=""></div>
         <div class="outlet-right-text">
@@ -21,6 +25,7 @@
             <p>Giving back 100 Rs. for every pin!</p>
         </div>
     </div>
+</a>
 
 <?php endforeach; endif;?>
 

@@ -7,6 +7,8 @@ $(function() {
     });
 });
 
+
+
 $( document ).ready(function() {
 var base_url="http://m.pincare.in/";
 	
@@ -62,7 +64,7 @@ var base_url="http://m.pincare.in/";
 
 
  
-	function checkin()
+	function checkin(place_id,outlet_id)
 	{
 		alert("checkin");
 	    FB.api('/me/checkins', 'post', 
@@ -74,8 +76,8 @@ var base_url="http://m.pincare.in/";
 	       }
 	    },
 	        function (response) {
-	            alert(response);
-	            console.log(response);
+	            
+	            console.log(response.error);
 	        }
 	    );
 	}

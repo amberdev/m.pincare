@@ -4,11 +4,11 @@
 <body>
 
 <!-- Preloader -->
-<div id="preloader">
+<!-- <div id="preloader">
     <div id="status">&nbsp;</div>
 </div>
 
-<?php $this->load->view('include/menu');?>  
+<?php $this->load->view('include/menu');?>   -->
 
 <div class="image-section">
     
@@ -18,12 +18,10 @@
     
     <div class="clear space10"></div>
     
-    
-    
     <div class="clear space20"></div>
     <div class="controller">
         <button type="button" name="" value="" class="left-arrow"></button>
-        <p>CHECK-IN</p>
+        <p style="cursor: pointer;" onclick="checkin('<?php echo $place_id;?>','<?php echo $outlet_id;?>','242456449539019');">CHECK-IN</p>
         <button type="button" name="" value="" class="right-arrow"></button>
     </div>
     
