@@ -71,56 +71,12 @@ var base_url="http://m.pincare.in/";
  
 	function checkin(place_id,outlet_id)
 	{
-		// alert("checkin");
-	    // FB.api('/me/checkins', 'post', 
-	    // { message: 'Testing checkins',
-	    //    place: 149296708507748,
-	    //    coordinates: {
-	    //        'latitude': 28.637010722237,
-	    //        'longitude': 77.286376153576
-	    //    }
-	    // },
-	    //     function (response) {
-	            
-	    //         console.log(response);
-	    //     }
-	    // );
-		FB.getLoginStatus(function (response) 
-    {
-    if (response.status === 'connected') 
-    {
-	FB.api('/me/accounts', function(response) {
-	 
-	var access_token1 =   FB.getAuthResponse()['accessToken'];
-	console.log(response.data[0].access_token);
+		FB.api('/me/feed', 'post', {
+		name: 'SomeName',
+		message: 'SomeMessage',
+		place: '106039436102339' // ID for Tallinn, Estonia
+		}, function (response) {console.log(response);}); 
 
-	FB.api('/me/feed', 'post', 
-              { 
-                  // for the newer versions of the Facebook API you need to add the access token
-                  access_token: response.data[0].access_token,
-                  message     : "Hii Testing with schedule time",
-                  link        : 'https://developers.facebook.com/docs/reference/dialogs/',
-                  picture     : 'http://fbrell.com/f8.jpg',
-                  name        : 'Featured of the Day',
-		         
-                  description : 'Your description'
-          }, 
-          function(response) {
-
-              if (!response || response.error) {
-                  alert(JSON.stringify(response.error));
-              } else {
-                  alert('Post ID: ' + response.id);
-              }
-          });
-	 
-	 
-	});    
-    } else {
-        FB.login(function(){
-    }, {scope: 'read_stream,email,  read_friendlists, user_about_me, user_birthday, user_hometown, user_website,email, read_friendlists,publish_actions,publish_pages,manage_pages'});
-    }
-    });
 
 	}
 
