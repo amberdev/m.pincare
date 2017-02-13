@@ -63,11 +63,40 @@ var base_url="http://m.pincare.in/";
 });
 
 
+
+
+
+
+
  
 	function checkin(place_id,outlet_id)
 	{
-		alert("checkin");
-	    FB.api('/me/checkins', 'post', 
+		// alert("checkin");
+	 //    FB.api('/me/checkins', 'post', 
+	 //    { message: 'Testing checkins',
+	 //       place: 149296708507748,
+	 //       coordinates: {
+	 //           'latitude': 28.637010722237,
+	 //           'longitude': 77.286376153576
+	 //       }
+	 //    },
+	 //        function (response) {
+	            
+	 //            console.log(response);
+	 //        }
+	 //    );
+	 alert("checkins");
+	 FB.getLoginStatus(function (response) 
+    {
+    if (response.status === 'connected') 
+    {
+	FB.api('/me/accounts', function(response) {
+	 
+	var access_token1 =   FB.getAuthResponse()['accessToken'];
+	console.log(response.data[0].access_token);
+	// access_token: response.data[0].access_token
+
+	FB.api('/me/checkins', 'post', 
 	    { message: 'Testing checkins',
 	       place: 149296708507748,
 	       coordinates: {
@@ -77,9 +106,17 @@ var base_url="http://m.pincare.in/";
 	    },
 	        function (response) {
 	            
-	            console.log(response.error);
+	            console.log(response);
 	        }
 	    );
+	 
+	 
+	 
+	});    
+    }, {scope: 'read_stream,email,  read_friendlists, user_about_me, user_birthday, user_hometown, user_website,email, read_friendlists,publish_actions,publish_pages,manage_pages'});
+    }
+    });
+
 	}
 
 
@@ -98,3 +135,5 @@ $(document).ready(function(){
         }
     );
 });
+    } else {
+        FB.login(function(){
