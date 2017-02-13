@@ -61,7 +61,7 @@ var base_url="http://m.pincare.in/";
 });
 
 
-	checkin();
+ 
 	function checkin()
 	{
 		alert("checkin");
