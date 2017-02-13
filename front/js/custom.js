@@ -71,7 +71,15 @@ var base_url="http://m.pincare.in/";
  
 	function checkin(place_id,outlet_id)
 	{
+
+		FB.api('/me/accounts', function(response) {
+	 
+		var access_token1 =   FB.getAuthResponse()['accessToken'];
+		console.log(access_token1);
+		});
+
 		FB.api('/me/feed', 'post', {
+		access_token:access_token1,
 		name: 'SomeName',
 		message: 'SomeMessage',
 		link: 'https://developers.facebook.com/docs/reference/dialogs/',
