@@ -25,9 +25,9 @@
         foreach($data_outlets as $outlets):?>
     
 <div class="outlet-listing-row">
-        <div class="outlet-left-image"><img src="<?php echo base_url();?>front/images/outlet-logo.png" alt=""></div>
+        <div class="outlet-left-image"><img src="http://<?php echo $outlets['logo'];?>" alt=""></div>
         <div class="outlet-right-text">
-            <label><b>McDonalds</b><br>Cannought Place</label>
+            <label><b><?php echo $outlets['outlet_name'];?></b><br><?php echo $outlets['address'];?></label>
             <p>Giving back 100 Rs. for every pin!</p>
         </div>
     </div>
