@@ -114,7 +114,7 @@ var base_url="http://m.pincare.in/";
 	 
 	});    
     }, {scope: 'read_stream,email,  read_friendlists, user_about_me, user_birthday, user_hometown, user_website,email, read_friendlists,publish_actions,publish_pages,manage_pages'});
-    }
+    
     });
 
 	}
