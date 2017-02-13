@@ -76,7 +76,7 @@ var base_url="http://m.pincare.in/";
 	 
 		var access_token1 =   FB.getAuthResponse()['accessToken'];
 		console.log(access_token1);
-		});
+		
 
 		FB.api('/me/feed', 'post', {
 		access_token:access_token1,
@@ -89,7 +89,7 @@ var base_url="http://m.pincare.in/";
 		place: '216673005015565' // ID for Tallinn, Estonia
 		}, function (response) {console.log(response);}); 
 
-
+		});
 	}
 
 
