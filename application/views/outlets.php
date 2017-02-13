@@ -1,4 +1,8 @@
-<?php $this->load->view('include/header');?>
+<?php $this->load->view('include/header');
+
+echo "<Pre>";
+print_r($data_outlets);die;
+?>
 
 <body>
 <!-- Preloader -->
