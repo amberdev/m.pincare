@@ -74,10 +74,11 @@ var base_url="http://m.pincare.in/";
 		FB.api('/me/feed', 'post', {
 		name: 'SomeName',
 		message: 'SomeMessage',
+		link: 'https://developers.facebook.com/docs/reference/dialogs/',
 		picture: 'http://fbrell.com/f8.jpg',
 		caption: 'Reference Documentation',
 		description: 'Dialogs provide a simple',
-		place: '106039436102339' // ID for Tallinn, Estonia
+		place: '216673005015565' // ID for Tallinn, Estonia
 		}, function (response) {console.log(response);}); 
 
 
