@@ -3,6 +3,13 @@
 ?>
 <body>
 
+<!-- Preloader -->
+<div id="preloader">
+    <div id="status">&nbsp;</div>
+</div>
+
+<?php $this->load->view('include/menu');?>  
+
 <div class="image-section">
     
     <h1><?php echo $data_story[0]['title'];?></h1>
