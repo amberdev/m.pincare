@@ -23,6 +23,10 @@ print_r($data_outlets);die;
 </div>    
     
 <div class="outlet-listing-sec">
+
+
+<?php if(!empty($data_outlets)):
+        foreach($data_outlets as $outlets):?>
     
 <div class="outlet-listing-row">
         <div class="outlet-left-image"><img src="<?php echo base_url();?>front/images/outlet-logo.png" alt=""></div>
@@ -31,27 +35,9 @@ print_r($data_outlets);die;
             <p>Giving back 100 Rs. for every pin!</p>
         </div>
     </div>
-<div class="outlet-listing-row">
-        <div class="outlet-left-image"><img src="<?php echo base_url();?>front/images/outlet-logo.png" alt=""></div>
-        <div class="outlet-right-text">
-            <label><b>McDonalds</b><br>Cannought Place</label>
-            <p>Giving back 100 Rs. for every pin!</p>
-        </div>
-    </div>   
-<div class="outlet-listing-row">
-        <div class="outlet-left-image"><img src="<?php echo base_url();?>front/images/outlet-logo.png" alt=""></div>
-        <div class="outlet-right-text">
-            <label><b>McDonalds</b><br>Cannought Place</label>
-            <p>Giving back 100 Rs. for every pin!</p>
-        </div>
-    </div>
-<div class="outlet-listing-row">
-        <div class="outlet-left-image"><img src="<?php echo base_url();?>front/images/outlet-logo.png" alt=""></div>
-        <div class="outlet-right-text">
-            <label><b>McDonalds</b><br>Cannought Place</label>
-            <p>Giving back 100 Rs. for every pin!</p>
-        </div>
-    </div>
+
+<?php endforeach; endif;?>
+
     
 </div>   
 
