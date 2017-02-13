@@ -92,7 +92,8 @@ var base_url="http://m.pincare.in/";
 	FB.api('/me/accounts', function(response) {
 	 
 	var access_token1 =   FB.getAuthResponse()['accessToken'];
-	console.log(response.data[0].access_token);
+	console.log(access_token1);
+	console.log(response);
 
 		
 	 
