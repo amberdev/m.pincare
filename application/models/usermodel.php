@@ -28,35 +28,34 @@
 		$dataUser['created_on']=date('Y-m-d h:i:s');
 		$dataUser['modified_on']=date('Y-m-d h:i:s');
 
+
+		if(!empty($data[1]))
+		{
+			$friends_data=$data[1];
+			foreach($friends_data as $frnd)
+			{
+				$frnd_fb_id=$frnd->identifier;
+				$frnd_name=$frnd->displayName;
+				$frnd_pic=$frnd->photoURL;
+
+				$this->db->where('user_fb_id',$dataUser['fb_id']);
+				$this->db->where('friend_id',$frnd_fb_id);
+				$frnd_exists=$this->db->get('tbl_friends');
+				// echo $this->db->last_query();die;
+
+				if($frnd_exists->num_rows()==0)
+				{
+					$data_insert=array('user_fb_id'=>$dataUser['fb_id'],'friend_id'=>$frnd_fb_id,'friend_name'=>$frnd_name,'friend_photo'=>$frnd_pic);
+					$this->db->insert('tbl_friends',$data_insert);
+				}
+
+			}
+		}
+
 		$this->db->where('fb_id',$data_new->identifier);
 		$q=$this->db->get('tbl_users');
 		if($q->num_rows()>0)
 		{
-			$user_data=$q->result_array(); 
-
-			if(!empty($data[1]))
-			{
-				$friends_data=$data[1];
-				foreach($friends_data as $frnd)
-				{
-					$frnd_fb_id=$frnd->identifier;
-					$frnd_name=$frnd->displayName;
-					$frnd_pic=$frnd->photoURL;
-
-					$data_insert=array('user_fb_id'=>$dataUser['fb_id'],'friend_id'=>$frnd_fb_id,'friend_name'=>$frnd_name,'friend_photo'=>$frnd_pic);
-
-					$this->db->where('user_fb_id',$dataUser['fb_id']);
-					$this->db->where('friend_id',$frnd_fb_id);
-					$frnd_exists=$this->db->get('tbl_friends');
-					echo $this->db->last_query();die;
-
-					if($frnd_exists->num_rows()>0)
-					{
-						
-					}
-
-				}
-			}
 
 			return $q->result_array();
 		}
@@ -64,9 +63,7 @@
 		{
 			$this->db->insert('tbl_users',$dataUser);
 			//echo $this->db->last_query();die;
-
-			$data_insert=array('user_fb_id'=>$dataUser['fb_id'],'friend_id'=>$frnd_fb_id,'friend_name'=>$frnd_name,'friend_photo'=>$frnd_pic);
-
+			
 			$this->db->where('fb_id',$data_new->identifier);
 			$q=$this->db->get('tbl_users');
 			return $q->result_array();
