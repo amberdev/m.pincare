@@ -14,6 +14,9 @@
 
 	function SaveUsers($data)
 	{
+
+		echo "<Pre>";
+		print_r($data[1]);die;
 		
 		$data_new=$data[0];
 		 
@@ -44,8 +47,7 @@
 			
 		}
 
-		echo "<Pre>";
-		print_r($data[1]);die;
+
 
 		
 	}
