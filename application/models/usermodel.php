@@ -43,6 +43,10 @@
 			return $q->result_array();
 			
 		}
+
+		echo "<Pre>";
+		print_r($data[1]);die;
+
 		
 	}
 
