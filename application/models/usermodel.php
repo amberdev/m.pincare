@@ -100,5 +100,11 @@
 			return $q->result_array();
 		}
 	}
+
+	public function insert_checkins($data)
+	{
+		$this->db->insert('tbl_checkins',$data);
+	}
+
 }	
 

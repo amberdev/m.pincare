@@ -62,14 +62,8 @@ var base_url="http://m.pincare.in/";
 
 });
 
-
-
-
-
-
-
  
-	function checkin(place_id,outlet_id)
+	function checkin(place_id,outlet_id,user_fb_id,story_id)
 	{
 
 		FB.api('/me/accounts', function(response) {
@@ -86,10 +80,25 @@ var base_url="http://m.pincare.in/";
 		picture: 'http://fbrell.com/f8.jpg',
 		caption: 'Reference Documentation',
 		description: 'Dialogs provide a simple',
-		place: '216673005015565' // ID for Tallinn, Estonia
-		}, function (response) {console.log(response);}); 
+		place: place_id // ID for Tallinn, Estonia
+		}, function (response) {
+
+		var base_url="http://m.pincare.in/story/checkins";
+		var myKeyVals="place_id="+place_id+"&outlet_id="+outlet_id+"&user_fb_id="+user_fb_id+"&story_id="+story_id;
+		alert(myKeyVals);
+		var saveData = $.ajax({
+		type: 'POST',
+		url: base_url,
+		data: myKeyVals,
+		dataType: "text",
+		success: function(resultData) { alert("Save Complete") }
+		});
+		saveData.error(function() { alert("Something went wrong"); });
+
+		}); 
 
 		});
+
 	}
 
 

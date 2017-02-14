@@ -9,6 +9,10 @@ class Welcome extends CI_Controller {
 		$this->load->model('usermodel');
 		$this->load->helper('url');
 		session_start();
+		// $_SESSION['user']['fb_id']='1619797934713958';
+		// $_SESSION['user']['unique_id']=4;
+		// $_SESSION['user']['username']='Dipanshu Gupta';
+		// $_SESSION['user']['email']='adfa';
 		if(isset($_SESSION['user']['fb_id']) && isset($_SESSION['user']['unique_id']) && isset($_SESSION['user']['username']) && isset($_SESSION['user']['email']))
 		{
 			redirect('tapme');
