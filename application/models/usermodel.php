@@ -135,5 +135,19 @@
 		$this->db->insert('tbl_checkins',$data);
 	}
 
+	public function trandingpins()
+	{
+
+		
+		$q=$this->db->query("select count(tbl_checkins.outlet_id)as numer,o.outlet_name, o.logo   from tbl_checkins 
+				inner join tbl_outlets o on(o.id=tbl_checkins.outlet_id)
+				group by tbl_checkins.outlet_id");
+
+		if($q->num_rows()>0)
+		{
+			return $q->result_array();
+		}
+	}
+
 }	
 

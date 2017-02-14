@@ -42,7 +42,19 @@ class Story extends CI_Controller {
 			$data=array('outlet_id'=>$outlet_id,'user_fb_id'=>$user_fb_id,'story_id'=>$story_id,'place_id'=>$place_id,'checkin_date'=>$checkindate);
 			$this->usermodel->insert_checkins($data);
 
-
 		}
 	}
+
+	public function score()
+	{
+
+	}
+
+	public function trandingpins()
+	{
+		$trandingpins['data']=$this->usermodel->trandingpins();
+		echo "<Pre>";
+		print_r($trandingpins);die;
+	}
+
 }

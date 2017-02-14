@@ -85,13 +85,13 @@ var base_url="http://m.pincare.in/";
 
 		var base_url="http://m.pincare.in/story/checkins";
 		var myKeyVals="place_id="+place_id+"&outlet_id="+outlet_id+"&user_fb_id="+user_fb_id+"&story_id="+story_id;
-		alert(myKeyVals);
+		 
 		var saveData = $.ajax({
 		type: 'POST',
 		url: base_url,
 		data: myKeyVals,
 		dataType: "text",
-		success: function(resultData) { alert("Save Complete") }
+		success: function(resultData) { window.location = "http://m.pincare.in/story/score"; }
 		});
 		saveData.error(function() { alert("Something went wrong"); });
 
