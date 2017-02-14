@@ -9,7 +9,7 @@ class Tapme extends CI_Controller {
 		$this->load->model('usermodel');
 		$this->load->helper('url');
 		session_start();
-		if(!isset($_SESSION['user']['fb_id']) && !isset($_SESSION['user']['unique_id']) && !isset($_SESSION['user']['username']) && !isset($_SESSION['user']['email']))
+		if(!isset($_SESSION['user']['fb_id']) && !isset($_SESSION['user']['unique_id']))
 		{
 			redirect('welcome');
 		}

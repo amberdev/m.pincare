@@ -13,7 +13,7 @@ class Welcome extends CI_Controller {
 		// $_SESSION['user']['unique_id']=4;
 		// $_SESSION['user']['username']='Dipanshu Gupta';
 		// $_SESSION['user']['email']='adfa';
-		if(isset($_SESSION['user']['fb_id']) && isset($_SESSION['user']['unique_id']) && isset($_SESSION['user']['username']) && isset($_SESSION['user']['email']))
+		if(isset($_SESSION['user']['fb_id']) && isset($_SESSION['user']['unique_id']))
 		{
 			redirect('tapme');
 		}
