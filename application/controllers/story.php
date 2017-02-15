@@ -48,13 +48,16 @@ class Story extends CI_Controller {
 	public function score()
 	{
 
+		$curr_fb_id=$_SESSION['user']['fb_id'];
+		$frnd_pin['pins']=$this->usermodel->get_frnds_pins($curr_fb_id);
+		$this->load->view('score',$frnd_pin);
 	}
 
 	public function trandingpins()
 	{
-		$trandingpins['data']=$this->usermodel->trandingpins();
-		echo "<Pre>";
-		print_r($trandingpins);die;
+		$trandingpins['data_pins']=$this->usermodel->trandingpins();
+		
+		$this->load->view('tranding',$trandingpins);
 	}
 
 }

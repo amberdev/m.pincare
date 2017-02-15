@@ -139,13 +139,50 @@
 	{
 
 		
-		$q=$this->db->query("select count(tbl_checkins.outlet_id)as numer,o.outlet_name, o.logo   from tbl_checkins 
+		$q=$this->db->query("select count(tbl_checkins.outlet_id)as numer,o.outlet_name, o.logo,o.address   from tbl_checkins 
 				inner join tbl_outlets o on(o.id=tbl_checkins.outlet_id)
-				group by tbl_checkins.outlet_id");
+				group by tbl_checkins.outlet_id order by numer desc");
 
 		if($q->num_rows()>0)
 		{
 			return $q->result_array();
+		}
+	}
+
+	public function get_frnds_pins($curr_id)
+	{
+		if(isset($curr_id))
+		{
+			$this->db->select('*');
+			$this->db->where('user_fb_id',$curr_id);
+			$q=$this->db->get('tbl_friends');
+			if($q->num_rows()>0)
+			{
+				 
+				foreach($q->result_array() as $return)
+				{
+					$query="select count(user_fb_id)as numbr from tbl_checkins where user_fb_id=".$return['friend_id']."";
+					$data=$this->db->query($query);
+					if($data->num_rows()>0)
+					{
+						$result=$data->result_array();
+
+						if($result[0]['numbr']!=0)
+						{
+							$return['count']=$result[0]['numbr'];
+							$return_arr[]=$return;
+							
+						}
+					}
+
+				}
+				return $return_arr;
+				 
+			}
+			else
+			{
+				return false;
+			}
 		}
 	}
 
