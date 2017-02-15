@@ -62,6 +62,18 @@ var base_url="http://m.pincare.in/";
 
 });
 
+function shareit(story_name,link,picture_url,caption,desctiption)
+    {
+        FB.ui({
+            method: 'feed', 
+            name: story_name,
+            link: 'https://developers.facebook.com/docs/reference/dialogs/',
+            picture: picture_url,
+            caption: 'Reference Documentation',
+            description: desctiption
+        });
+    }
+
  
 	function checkin(place_id,outlet_id,user_fb_id,story_id)
 	{
