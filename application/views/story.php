@@ -29,7 +29,7 @@
         <?php 
         if(!isset($place_id) && !isset($outlet_id)){?>
 
-                <p style="cursor: pointer;" onclick="shareit('<?php echo $data_story[0]['title'];?>',link,'http://<?php echo $data_story[0]["story_image"];?>',caption,'<?php echo $data_story[0]["description"];?>');">Share</p>
+                <p style="cursor: pointer;" onclick="shareit('<?php echo $data_story[0]['title'];?>','link','http://<?php echo $data_story[0]["story_image"];?>','caption','<?php echo trim(addslashes($data_story[0]["description"]));?>');">Share</p>
 
            <?php }else{?>
 
