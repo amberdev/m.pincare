@@ -11,7 +11,7 @@ class Story extends CI_Controller {
 		session_start();
 		if(!isset($_SESSION['user']['fb_id']) && !isset($_SESSION['user']['unique_id']))
 		{
-			redirect('welcome');
+			// redirect('welcome');
 		}
 	}
 	public function index()
