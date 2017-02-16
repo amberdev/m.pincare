@@ -12,9 +12,9 @@
 	<?php foreach($data_pins as $pins):?>
     
 	<div class="outlet-pins-row">
-	<p><?php echo $pins['outlet_name']?><br><?php echo $pins['address'];?></p>
+	<b><p><?php echo $pins['outlet_name']?><br><?php echo $pins['address'];?></p></b>
 	<div class="outlet-profile-left"><img src="http://<?php echo $pins['logo'];?>" alt=""></div>
-	<div class="outlet-pins-right"><?php echo $pins['numer'];?><br>Pins</div>        
+	<div class="outlet-pins-right"><b><?php echo $pins['numer'];?><br>Pins</b></div>        
 	</div>
 
 <?php endforeach;?>

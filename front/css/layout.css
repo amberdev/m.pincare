@@ -142,7 +142,7 @@ input[type=submit]{cursor:pointer;}
 }
 .start-playing-sec p{
     color:#2a2f34;
-    font-size:20px;  
+    font-size:16px;  
     font-family: 'sf_ui_textlight';
     line-height:30px;
 }
@@ -168,16 +168,16 @@ input[type=submit]{cursor:pointer;}
 }
 .outlet-left-image img{margin:11px 0px 0px 11px;}
 
-.outlet-right-text{float:left; width: calc(100% - 155px);}
+.outlet-right-text{float:left; width: calc(100% - 124px);}
 .outlet-right-text label{font-size:14px;}
 .outlet-right-text p{font-size:16px; font-family: 'sf_ui_textlight'; line-height:24px; padding-top:10px;}
 /* outlet listing ends here */
 
 /* image section starts here */
 .image-section{width:100%; padding:0px 15px; display:table;}
-.image-section h1{text-align:center; padding:10px 0px; font-size:24px;}
+.image-section h1{text-align:center; padding:10px 0px; font-size:20px;}
 .image-section p{font-size:12px; line-height:16px;}
-.image-section a{font-size:20px; display:table; margin:auto; margin-bottom:20px;}
+.image-section a{font-size:16px; display:table; margin:auto; margin-bottom:20px;}
 
 .progress-bar{padding:0px 0px;}
 .progress-bar-view{height:15px; background:#e5e5e5;}

@@ -15,7 +15,7 @@
     
 <div class="image-pins-row">
 <div class="profile-left"><img src="<?php echo $pin['friend_photo'];?>" alt=""></div>
-<div class="image-pins-right"><?php echo $pin['count'];?><br>Pins</div>        
+<div class="image-pins-right"><b><?php echo $pin['count'];?><br>Pins</b></div>        
 </div>
 <?php endforeach;?>
 <?php }else{?><div class="outlet-pins-row" style="color:#ff0000;">
