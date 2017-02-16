@@ -33,7 +33,14 @@ class Tapme extends CI_Controller {
         }
 
 		$outlets['data_outlets']=$this->usermodel->get_outlets($rest_details);		
-		$this->load->view('outlets',$outlets);
+		if(empty($outlets['data_outlets']))
+		{
+			$this->load->view('error');
+		}
+		else
+		{
+			$this->load->view('outlets',$outlets);	
+		}
 	}
 
 	public function error()

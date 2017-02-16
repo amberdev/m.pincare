@@ -158,10 +158,23 @@
 			$q=$this->db->get('tbl_friends');
 			if($q->num_rows()>0)
 			{
+				$arr=$q->result_array();
+
+				$this->db->where('fb_id',$curr_id);
+				$curr_data=$this->db->get('tbl_users');
+				$curr_data_arr=$curr_data->result_array();
+
+				$count=count($arr);
+
+
+				$arr[$count]['friend_id']=$curr_id;	
+				$arr[$count]['friend_photo']=$curr_data_arr[0]['photo_url'];
+				
 				 
-				foreach($q->result_array() as $return)
+				foreach($arr as $return)
 				{
-					$query="select count(user_fb_id)as numbr from tbl_checkins where user_fb_id=".$return['friend_id']."";
+					$query="select count(user_fb_id)as numbr from tbl_checkins where user_fb_id=".$return['friend_id']." order by numbr desc";
+
 					$data=$this->db->query($query);
 					if($data->num_rows()>0)
 					{
@@ -174,9 +187,13 @@
 							
 						}
 					}
-
 				}
-				return $return_arr;
+				function sortByOrder($a, $b)
+				{
+				return  $b['count']-$a['count'] ;
+				}
+				$sorted=usort($return_arr, 'sortByOrder');
+				return $return_arr; 
 				 
 			}
 			else
