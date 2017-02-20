@@ -11,14 +11,15 @@
         foreach($data_story as $story){?>
 
     <li>
-<h1><?php echo $story['title'];?></h1>
-<img src="http://<?php echo $story['story_image'];?>" id="img_<?php echo $i;?>" alt="">
-<p><?php echo $story['description'];?></p>
-<div id="str_id" style="display: none;"><?php echo $story['id'];?></div>
-<div id="plc_id" style="display: none;"><?php echo @$place_id;?></div>
-<div id="out_id" style="display: none;"><?php echo @$outlet_id;?></div>
-<div id="user_fid" style="display: none;"><?php echo @$user_fb_id;?></div>
-<div id="img_src" style="display: none;">http://<?php echo $story['story_image'];?></div>
+<h1><?php echo $story['title'];?></h1><div class="coma" style="display: none;">~</div>
+<img src="http://<?php echo $story['story_image'];?>" id="img_<?php echo $i;?>" alt=""><div class="coma" style="display: none;">~</div>
+<p><?php echo $story['description'];?></p><div class="coma" style="display: none;">~</div>
+<div class="str_id" style="display: none;"><?php echo $story['id'];?></div><div class="coma" style="display: none;">~</div>
+<div class="plc_id" style="display: none;"><?php echo @$place_id;?></div><div class="coma" style="display: none;">~</div>
+<div class="out_id" style="display: none;"><?php echo @$outlet_id;?></div><div class="coma" style="display: none;">~</div>
+<div class="user_fid" style="display: none;"><?php echo @$user_fb_id;?></div><div class="coma" style="display: none;">~</div>
+<div class="img_src" style="display: none;">http://<?php echo $story['story_image'];?></div>
+<div class="coma" style="display: none;">~</div>
 </li>
 
     <?php $i++;}}?>
