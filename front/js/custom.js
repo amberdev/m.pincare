@@ -27,7 +27,7 @@ $(window).load(function() {
             // shareit("'"+data[0]+"'")
             var img=$("#img_"+index).attr('src');
 
-            $("#shareit_id").attr('onclick', 'shareit("'+data[0]+'","link","'+img+'","caption","'+data[2]+'")');
+            $("#shareit_id").attr('onclick', 'shareit("'+data[0]+'","link","'+data[8]+'","caption","'+data[2]+'")');
                       
 
             $("#checkin_id").attr('onclick', 'checkin("'+data[5]+'","'+data[6]+'","'+data[7]+'","'+data[4]+'")');

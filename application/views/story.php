@@ -18,7 +18,7 @@
 <div id="plc_id" style="display: none;"><?php echo @$place_id;?></div>
 <div id="out_id" style="display: none;"><?php echo @$outlet_id;?></div>
 <div id="user_fid" style="display: none;"><?php echo @$user_fb_id;?></div>
-
+<div id="img_src" style="display: none;">http://<?php echo $story['story_image'];?></div>
 </li>
 
     <?php $i++;}}?>
