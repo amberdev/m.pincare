@@ -37,12 +37,12 @@ $(window).load(function() {
             var plc_id=$(".plc_id").html();
             var out_id=$(".out_id").html();
             var user_fid=$(".user_fid").html();
-            var img_src=$(".img_src").html();
+            var img_src=coma[7];
 
-            $("#shareit_id").attr('onclick', 'shareit("'+coma[0].trim()+'","link","'+coma[7].trim()+'","caption","'+coma[2].trim()+'")');
+            $("#shareit_id").attr('onclick', 'shareit("'+coma[0].trim()+'","link","'+img_src.trim()+'","caption","'+coma[2].trim()+'")');
                       
 
-            $("#checkin_id").attr('onclick', 'checkin("'+coma[4].trim()+'","'+coma[5].trim()+'","'+[6].trim()+'","'+coma[3].trim()+'")');
+            $("#checkin_id").attr('onclick', 'checkin("'+coma[4].trim()+'","'+coma[5].trim()+'","'+coma[6].trim()+'","'+coma[3].trim()+'")');
 		 
     	}
     });
