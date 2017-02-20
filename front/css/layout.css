@@ -185,8 +185,29 @@ input[type=submit]{cursor:pointer;}
 
 .controller{width:auto; margin:auto; display:table;}
 .controller p{font-size:24px; float:left; line-height:34px; padding:0px 30px;}
-.controller button.left-arrow{width:30px; height:34px; background:url(../images/arrow-left.png) no-repeat; float:left;}
-.controller button.right-arrow{width:30px; height:34px; background:url(../images/arrow-right.png) no-repeat; float:left;}
+.flex-prev{
+    width:30px; 
+    height:34px; 
+    background:url(../images/arrow-left.png) no-repeat; 
+    float:left; 
+    font-size:0px !important; 
+    position:absolute;
+    left:46px;
+    top:20px;
+}
+.flex-next{
+    width:30px; 
+    height:34px; 
+    background:url(../images/arrow-right.png) no-repeat; 
+    float:left; 
+    font-size:0px !important;    
+    position:absolute;
+    right:73px;
+    top:20px;
+}
+
+.flex-control-paging{display:none;}
+.flex-direction-nav{position:absolute; width:100%;}
 /* image section ends here */
 
 /* image pins section starts here */

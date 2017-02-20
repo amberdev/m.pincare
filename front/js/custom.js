@@ -7,6 +7,36 @@ $(function() {
     });
 });
 
+// flexslider function
+$(window).load(function() {
+    $('.flexslider').flexslider({
+        slideshowSpeed:  5000,
+    	animation: "slide",
+    	after: function(slider) 
+    	{
+      		// current = slider.currentSlide.;
+
+      		var index = $('li:has(.flex-active)').index('.flex-control-nav li')+1;
+      		var curSlide = slider.find("li:nth-of-type("+(slider.currentSlide+index)+")");
+            var text = $(curSlide).text().trim();
+
+            var data=text.split("\n");
+          
+            console.log(data);
+            // shareit("'"+data[0]+"'")
+            var img=$("#img_"+index).attr('src');
+
+            $("#shareit_id").attr('onclick', 'shareit("'+data[0]+'","link","'+img+'","caption","'+data[2]+'")');
+                      
+
+            $("#checkin_id").attr('onclick', 'checkin("'+data[5]+'","'+data[6]+'","'+data[7]+'","'+data[4]+'")');
+		 
+    	}
+    });
+});
+
+
+
 
 
 $( document ).ready(function() {

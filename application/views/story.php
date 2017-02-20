@@ -1,27 +1,30 @@
- <?php $this->load->view('include/header');
-
-?>
+<?php $this->load->view('include/header');?>
 <body>
-
-<!-- Preloader -->
- <div id="preloader">
-    <div id="status">&nbsp;</div>
-</div>
-
-
-
-<!--<?php $this->load->view('include/menu');?>   -->
 
 <div class="image-section">
     
-    <h1><?php echo $data_story[0]['title'];?></h1>
-    <img src="http://<?php echo $data_story[0]['story_image'];?>" alt="">
-    <p><?php echo $data_story[0]['description'];
+<div class="flexslider">
+<ul class="slides">
 
-    $story_id=$data_story[0]['id'];
-    ?></p>
-    
-    <div class="clear space10"></div>
+<?php if(!empty($data_story)){
+        $i=1;
+        foreach($data_story as $story){?>
+
+    <li>
+<h1><?php echo $story['title'];?></h1>
+<img src="http://<?php echo $story['story_image'];?>" id="img_<?php echo $i;?>" alt="">
+<p><?php echo $story['description'];?></p>
+<div id="str_id" style="display: none;"><?php echo $story['id'];?></div>
+<div id="plc_id" style="display: none;"><?php echo @$place_id;?></div>
+<div id="out_id" style="display: none;"><?php echo @$outlet_id;?></div>
+<div id="user_fid" style="display: none;"><?php echo @$user_fb_id;?></div>
+
+</li>
+
+    <?php $i++;}}?>
+
+</ul>
+</div>
     
     <div class="clear space20"></div>
     <div class="controller">
@@ -29,13 +32,12 @@
         <?php 
         if(!isset($place_id) && !isset($outlet_id)){?>
 
-                <p style="cursor: pointer;" onclick="shareit('<?php echo $data_story[0]['title'];?>','link','http://<?php echo $data_story[0]["story_image"];?>','caption','<?php echo trim(addslashes($data_story[0]["description"]));?>');">Share</p>
+                <p id="shareit_id" style="cursor: pointer;" onclick="shareit('<?php echo @$data_story[0]['title'];?>','link','http://<?php echo @$data_story[0]["story_image"];?>','caption','<?php echo trim(addslashes(@$data_story[0]["description"]));?>');">Share</p>
 
            <?php }else{?>
 
-        <p style="cursor: pointer;" onclick="checkin('<?php echo @$place_id;?>','<?php echo @$outlet_id;?>','<?php echo @$user_fb_id;?>','<?php echo @$story_id;?>');">CHECK-IN</p>
+        <p id="checkin_id" style="cursor: pointer;" onclick="checkin('<?php echo @$place_id;?>','<?php echo @$outlet_id;?>','<?php echo @$user_fb_id;?>','<?php echo @$data_story[0]['id'];?>');">CHECK-IN</p>
         <?php }?>
-
         <button type="button" name="" value="" class="right-arrow"></button>
     </div>
     
@@ -44,16 +46,6 @@
     <a href="<?php echo base_url();?>tapme">Go Back</a>
     
 </div>    
-
-<script type="text/javascript">
-    //<![CDATA[
-        $(window).on('load', function() { // makes sure the whole site is loaded 
-            $('#status').fadeOut(); // will first fade out the loading animation 
-            $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website. 
-            $('body').delay(350).css({'overflow':'visible'});
-        })
-    //]]>
-</script> 
   
 </body>    
 </html>    
