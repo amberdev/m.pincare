@@ -12,6 +12,7 @@ $(window).load(function() {
     $('.flexslider').flexslider({
         slideshowSpeed:  5000,
     	animation: "slide",
+    	slideshow: false,
     	after: function(slider) 
     	{
       		// current = slider.currentSlide.;
