@@ -13,7 +13,7 @@
     <li>
 <h1><?php echo $story['title'];?></h1><div class="coma" style="display: none;">~</div>
 <img src="http://<?php echo $story['story_image'];?>" id="img_<?php echo $i;?>" alt=""><div class="coma" style="display: none;">~</div>
-<p><?php echo $story['description'];?></p><div class="coma" style="display: none;">~</div>
+<p><?php echo addslashes($story['description']);?></p><div class="coma" style="display: none;">~</div>
 <div class="str_id" style="display: none;"><?php echo $story['id'];?></div><div class="coma" style="display: none;">~</div>
 <div class="plc_id" style="display: none;"><?php echo @$place_id;?></div><div class="coma" style="display: none;">~</div>
 <div class="out_id" style="display: none;"><?php echo @$outlet_id;?></div><div class="coma" style="display: none;">~</div>

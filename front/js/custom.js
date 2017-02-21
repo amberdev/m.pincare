@@ -38,9 +38,11 @@ $(window).load(function() {
             var out_id=$(".out_id").html();
             var user_fid=$(".user_fid").html();
             var img_src=coma[7];
-
-            $("#shareit_id").attr('onclick', 'shareit("'+coma[0].trim()+'","link","'+img_src.trim()+'","caption","'+coma[2].trim()+'")');
+            console.log(img_src);
+            words = coma[2].trim().replace(/\n/g, " ");
+            $("#shareit_id").attr('onclick', 'shareit("'+coma[0].trim()+'","link","'+img_src.trim()+'","caption","'+words+'")');
                       
+
 
             $("#checkin_id").attr('onclick', 'checkin("'+coma[4].trim()+'","'+coma[5].trim()+'","'+coma[6].trim()+'","'+coma[3].trim()+'")');
 		 
